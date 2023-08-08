@@ -48,7 +48,7 @@ const playExperiment = async (req, res) => {
       datas: experiment.datas,
       ...req.user,
     });
-    return res.status(200).json({ experiment, user });
+    return res.status(200).json({ experiment, meta: user });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ error: "Server error. Please try again" });
